@@ -31,11 +31,8 @@ async function genBanner(e) {
     } else if (blurCheck.checked === true){
         baseURL += '?blur=10';
     }
-    let fetch_randy = await fetch(baseURL)
+    await fetch(baseURL)
             .then(json => displayResults(json))
-    
-    //form.reset();
-    //console.log("fuck you");
 }
 
 
