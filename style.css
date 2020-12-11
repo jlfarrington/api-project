@@ -3,3 +3,17 @@ form {
     flex-direction: column;
     width: 200px;
 }
+
+h2 {
+    position: absolute;
+    bottom: 800px;
+    font-size: 60px;
+    /* margin: auto; */
+    z-index: 1;
+}
+
+img {
+    position: relative;
+    width: 100%;
+    margin: auto;
+}
