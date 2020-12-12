@@ -1,43 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@600&display=swap" rel="stylesheet">
     <title>Banner API Generator</title>
 </head>
+
 <body>
     <div class="container">
         <h1>Banner Generator</h1>
-        <div class="banner jumbotron-fluid">
-            <div class="ban container">
-                
+        <div class="banner">
+            <div class="ban-heading">
+
             </div>
         </div>
         <div class="container form">
             <form>
-                <input type="text" id="ban-text" placeholder="Enter text for your banner here">
                 <label for="ban-text">Banner Text</label>
-                <input type="text" id="color" placeholder="#FFFFFF">
-                <label for="color">Text Color (HEX)</label>
-                <input type="checkbox" id="blur">
+                <input type="text" id="ban-text" placeholder="Enter text for your banner here">
+                <label for="color">Text Color</label>
+                <input type="text" id="color" placeholder="#FFFFFF, 'blue', rgba()">
                 <label for="blur">Blur</label>
-                <input type="checkbox" id="grayscale">
+                <input type="checkbox" id="blur">
                 <label for="grayscale">Grayscale</label>
-                <input type="submit" id="submit">
-                
+                <input type="checkbox" id="grayscale">
+               
+                <input type="submit" id="submit" value="Generate">
+
             </form>
             <div class="container section">
                 <section>
-                    
+
                 </section>
             </div>
         </div>
-    
+
     </div>
 
-
+<div class="footer">
+    <p>Made by Jennifer Farrington using the <a href="https://picsum.photos/" target="blank">Lorem Picsum API</a>.</p>
+</div>
 
     <script src="index.js"></script>
 </body>
+
 </html>

@@ -1,4 +1,4 @@
-let baseURL = "https://picsum.photos/900/400"
+let baseURL = "https://picsum.photos/1200/400"
 
 const banText = document.querySelector('#ban-text');
 const txtColor = document.querySelector('#color');
@@ -9,13 +9,16 @@ const submitBtn = document.querySelector('#submit');
 const clearBtn = document.getElementById('clear')
 let url;
 
-
 form.addEventListener("submit", genBanner);
-
-
 
 async function genBanner(e) {
     e.preventDefault();
+
+    let header = document.querySelector('.ban-heading');
+    while (header.firstChild){
+        header.removeChild(header.firstChild)
+    }
+
     if (grayscaleCheck.checked === true && blurCheck.checked === true){
         url = baseURL + '?grayscale' + '&blur=5';
     } else if (grayscaleCheck.checked === true){
@@ -29,13 +32,18 @@ async function genBanner(e) {
     await fetch(url)
             .then(json => displayResults(json))
     
-    let section = document.querySelector('.ban');
     if(banText.value != ""){
-        let heading = document.createElement('h2');
-        heading.innerText = banText.value;
-        section.appendChild(heading);
-    } 
-
+        let header = document.querySelector('.ban-heading');
+        let headingText = document.createElement('h2');
+        // headingText.classList.add('h2Banner')
+        headingText.innerText = banText.value;
+        header.appendChild(headingText);
+        if(txtColor.value){
+            header.style.color = txtColor.value;
+        } else if(!txtColor.value){
+            header.style.color = "white";
+        }
+    }
 
     form.reset();
 }
@@ -43,11 +51,6 @@ async function genBanner(e) {
 
 function displayResults(json) {
     let img = json.url;
-    let section = document.querySelector('.ban');
-    while (section.firstChild){
-            section.removeChild(section.firstChild);
-        }
-    let banner = document.createElement('img')
-    banner.src = img;
-    section.appendChild(banner);
+    let section = document.querySelector('.banner');
+    section.style.backgroundImage = `url(${img})`
 }
