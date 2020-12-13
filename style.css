@@ -49,16 +49,6 @@ form {
   position: relative;
 }
 
-.check {
-
-    input {
-      opacity: 0;
-      width: 5em;
-      height: 1em;
-    }
-  
-  }
-
 #submit:active{
     top: 0.1em;
 }
