@@ -28,18 +28,46 @@ form {
 }
 
 #submit{
-  align-self: center;
   transition: transform .2s;
   grid-column-start: 1;
   grid-column-end: 3;
-  background-color: darkgray;
   height: 40px;
   font-size: 20px;
-  color: #100938;
   font-weight: bolder;
   border: 1.5px solid gray;
-  border-radius: 20px;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 1px 6px 0 rgba(0, 0, 0, 0.02);
+  display:inline-block;
+  margin: 0 0.3em 0.3em 0;
+  border-radius: 0.15em;
+  box-sizing: border-box;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: 400;
+  color: #FFFFFF;
+  background-color: #3369ff;
+  box-shadow: inset 0 -0.6em 0 -0.35em rgba(0,0,0,0.17);
+  text-align: center;
+  position: relative;
+}
+
+.check {
+
+    input {
+      opacity: 0;
+      width: 5em;
+      height: 1em;
+    }
+  
+  }
+
+#submit:active{
+    top: 0.1em;
+}
+
+@media all and (max-width: 30em){
+    #submit{
+        display: block;
+        margin: 0.4em auto;
+    }
 }
 
 #submit:hover{
@@ -66,7 +94,7 @@ label {
 }
 
 h2{
-    font-size: 60px;
+    font-size: 80px;
     z-index: 1;
     text-align: center;
 }
